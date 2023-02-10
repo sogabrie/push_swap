@@ -1,11 +1,14 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-enum s_error
+# include <stdio.h>
+# include <stdlib.h>
+
+/*enum t_error
 {
-    OK =    0;
-    ERROR = 1; 
-} t_error;
+    OK =    0,
+    ERROR = 1 
+};*/
 
 typedef struct s_list
 {
@@ -16,10 +19,11 @@ typedef struct s_list
 typedef struct s_stack
 {
     unsigned int    count;
-    t_list          *first;
-    t_list          *last_but_one;
-    t_list          *last;
+    struct s_list   *first;
+    struct s_list   *last_but_one;
+    struct s_list   *last;
 }   t_stack;
 
-t_error initalization_stack(t_stack st, int *mas, unsigned int size);
+t_stack *constructor_stack();
+int     initialization_stack(t_stack *st, int *mas, long size);
 # endif
