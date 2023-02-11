@@ -35,4 +35,12 @@ int     initialization_stack(t_stack *st, int *mas, long size);
 void    sa_swap(t_stack *st);
 void    sb_swap(t_stack *st);
 void    ss_swap(t_stack *st_a, t_stack *st_b);
+
+int     pa_swap(t_stack *a, t_stack *b);
+int     pb_swap(t_stack *a, t_stack *b);
+
+void    ra_swap(t_stack *a);
+void    rb_swap(t_stack *b);
+void    rr_swap(t_stack *a, t_stack *b);
+
 # endif
