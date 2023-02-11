@@ -1,9 +1,11 @@
-SRCS			= push_swap.c initalization_stach.c 
+SRCS			= push_swap.c initialization_stack.c swap_sab.c \
+				  push_pop.c
+
 OBJS			= $(SRCS:.c=.o)
 
-BONUS			= 
+#BONUS			= 
 
-BONUS_OBJS		= $(BONUS:.c=.o)
+#BONUS_OBJS		= $(BONUS:.c=.o)
 
 CC				= gcc
 RM				= rm -f
@@ -11,10 +13,10 @@ CFLAGS			= -Wall -Wextra -Werror
 
 NAME			= push_swap
 
-all:			$(NAME) Makefile
+all:			$(OBJS) $(NAME) Makefile
 
 $(NAME):		$(OBJS)
-				$(CC) $(OBJS)  $(NAME)
+				$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 				$(RM) $(OBJS) $(BONUS_OBJS)

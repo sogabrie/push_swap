@@ -3,6 +3,7 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 /*enum t_error
 {
@@ -24,6 +25,14 @@ typedef struct s_stack
     struct s_list   *last;
 }   t_stack;
 
+int    push_stack(t_stack *st, int value);
+int    pop_stack(t_stack *st);
+
 t_stack *constructor_stack();
+void    free_stack(t_stack *st);
 int     initialization_stack(t_stack *st, int *mas, long size);
+
+void    sa_swap(t_stack *st);
+void    sb_swap(t_stack *st);
+void    ss_swap(t_stack *st_a, t_stack *st_b);
 # endif

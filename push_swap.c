@@ -1,19 +1,40 @@
 #include "push_swap.h"
 
+void    print_stack(t_stack *st)
+{
+    t_list  *ls;
+
+    if (!st && st->count < 1)
+    {
+        printf("ERROR Steck frry");
+        return ;
+    }
+    ls = st->first;
+    while(ls)
+    {
+        printf("cont = %d\n", ls->content);
+        ls = ls->next;
+    }
+}
+
 int main()
 {
     t_stack *a = constructor_stack();
-    if (a == 0)
+    t_stack *b = constructor_stack();
+    if (!a && !b)
         return (printf("ERROR 1\n") && 0);
-    int mas[10] = {5,3,8,7,6};
+    int mas_a[10] = {5,3,8,7,6,9,10,256};
+    int mas_b[10] = {12,13,14,15,16,17,18,19};
     printf("mtnum enq initializac\n");
-    int err = initialization_stack(a, mas, 5);
-    while (a->count)
-    {
-        //printf("count = %d\n", a->count);
-        printf("cont = %d\n",a->first->content);
-        a->first = a->first->next;
-        a->count -= 1;
-    }
-    return (err);
+    initialization_stack(a, mas_a, 8);
+    initialization_stack(b, mas_b, 8);
+
+    ss_swap(a, b);
+
+    printf("stak a\n");
+    print_stack(a);
+    printf("stack b\n");
+    print_stack(b);
+
+    return (0);
 }
