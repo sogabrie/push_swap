@@ -4,7 +4,7 @@ void    ss_util(t_stack *st)
 {
     int i;
 
-    if (!st && st->count < 2)
+    if (!st || st->count < 2)
         return ;
     i = st->first->content;
     st->first->content = st->first->next->content;

@@ -9,7 +9,6 @@ t_stack    *constructor_stack()
         return (NULL);
     st->count = 0;
     st->first = 0;
-    st->last_but_one = 0;
     st->last = 0;
     return (st);
 }

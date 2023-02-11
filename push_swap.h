@@ -15,13 +15,13 @@ typedef struct s_list
 {
     int             content;
     struct s_list   *next;
+    struct s_list    *prev;
 }   t_list;
 
 typedef struct s_stack
 {
     unsigned int    count;
     struct s_list   *first;
-    struct s_list   *last_but_one;
     struct s_list   *last;
 }   t_stack;
 
@@ -43,4 +43,7 @@ void    ra_swap(t_stack *a);
 void    rb_swap(t_stack *b);
 void    rr_swap(t_stack *a, t_stack *b);
 
+void     rra_swap(t_stack *a);
+void     rrb_swap(t_stack *b);
+void     rrr_swap(t_stack *a, t_stack *b);
 # endif

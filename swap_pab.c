@@ -2,7 +2,7 @@
 
 int   swap_pab(t_stack *st1, t_stack *st2)
 {
-   if (!st2->count)
+   if (!st1 || !st2 || !st2->count)
       return (0);
    return (push_stack(st1,pop_stack(st2)));
 }

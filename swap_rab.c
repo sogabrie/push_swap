@@ -2,15 +2,14 @@
 
 void  swap_rab(t_stack *st)
 {
-   t_list   *ls;
-
-   if (st->count < 2)
+   if (!st || st->count < 2)
       return ;
-   ls = st->first;
    st->first = st->first->next;
-   st->last->next = ls;
-   st->last = ls;
-   ls->next = 0;
+   st->last->next = st->first->prev;
+   st->first->prev->prev = st->last;
+   st->last = st->first->prev;
+   st->last->next = 0;
+   st->first->prev = 0;
 }
 
 void  ra_swap(t_stack *a)
