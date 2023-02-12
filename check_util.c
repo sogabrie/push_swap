@@ -8,7 +8,14 @@ int	ft_isdigit(int a )
 		return (0);
 }
 
-int	ft_atoi(const char *nptr)
+int   check_plus(int a )
+{
+   if (a == 43 || a = 45)
+      return (1);
+   return (0);
+}
+
+long  ft_atoi(const char *nptr)
 {
 	int		i;
 	int		f;
@@ -17,10 +24,6 @@ int	ft_atoi(const char *nptr)
 	i = 0;
 	f = 0;
 	ptr = 0;
-	while (nptr[i] != 0 && (nptr[i] == ' ' || nptr[i] == '\t' || \
-				nptr[i] == '\r' || nptr[i] == '\n' || \
-				nptr[i] == '\v' || nptr[i] == '\f'))
-		++i;
 	if (nptr[i] != 0 && nptr[i] == '-')
 	{
 		++i;
