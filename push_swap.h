@@ -46,4 +46,8 @@ void    rr_swap(t_stack *a, t_stack *b);
 void     rra_swap(t_stack *a);
 void     rrb_swap(t_stack *b);
 void     rrr_swap(t_stack *a, t_stack *b);
+
+int		check_argv(int *mas, char **arg, int count);
+long	ft_atoi(char *nptr);
+int		chack_number(char *mas);
 # endif

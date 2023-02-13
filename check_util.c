@@ -10,12 +10,41 @@ int	ft_isdigit(int a )
 
 int   check_plus(int a )
 {
-   if (a == 43 || a = 45)
+   if (a == 43 || a == 45)
       return (1);
    return (0);
 }
 
-long  ft_atoi(const char *nptr)
+size_t	ft_strlen(const char *a )
+{
+	int	i;
+
+	i = 0;
+	while (a[i] != 0)
+		++i;
+	return (i);
+}
+
+int	chack_number(char *mas)
+{
+	int	i;
+
+	i = 0;
+	if (!ft_strlen(mas))
+		return (1);
+	if (!check_plus(mas[i]) && !ft_isdigit(mas[i]))
+		return (1);
+	while (mas[++i])
+	{
+		if (!ft_isdigit(mas[i]))
+				return (1);
+	}
+	if (ft_strlen(mas) == 1 && check_plus(mas[0]))
+		return (1);
+	return (0);
+}
+
+long  ft_atoi(char *nptr)
 {
 	int		i;
 	int		f;
