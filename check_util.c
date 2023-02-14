@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_util.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/13 20:29:51 by sogabrie          #+#    #+#             */
+/*   Updated: 2023/02/13 20:32:02 by sogabrie         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_isdigit(int a )
@@ -8,11 +20,11 @@ int	ft_isdigit(int a )
 		return (0);
 }
 
-int   check_plus(int a )
+int	check_plus(int a )
 {
-   if (a == 43 || a == 45)
-      return (1);
-   return (0);
+	if (a == 43 || a == 45)
+		return (1);
+	return (0);
 }
 
 size_t	ft_strlen(const char *a )
@@ -37,14 +49,14 @@ int	chack_number(char *mas)
 	while (mas[++i])
 	{
 		if (!ft_isdigit(mas[i]))
-				return (1);
+			return (1);
 	}
 	if (ft_strlen(mas) == 1 && check_plus(mas[0]))
 		return (1);
 	return (0);
 }
 
-long  ft_atoi(char *nptr)
+long	ft_atoi(char *nptr)
 {
 	int		i;
 	int		f;
