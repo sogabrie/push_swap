@@ -6,7 +6,7 @@
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:29:51 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/13 20:32:02 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/02/14 21:01:21 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	check_plus(int a )
 	return (0);
 }
 
-size_t	ft_strlen(const char *a )
+int	ft_strlen(char *a )
 {
 	int	i;
 

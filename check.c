@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 18:28:47 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/13 20:29:37 by sogabrie         ###   ########.fr       */
+/*   Created: 2023/02/14 21:11:38 by sogabrie          #+#    #+#             */
+/*   Updated: 2023/02/14 21:43:08 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,50 @@ int	check_duplikat(int *mas, int count)
 	return (0);
 }
 
-int	check_argv(int *mas, char **arg, int count)
+int	check_mas(int *mas, char **arg, size_t count, size_t indexs)
 {
-	int		i;
+	size_t	i;
+	size_t	j;
 	long	lo;
 
-	i = 0;
-	while (i < count)
+	j = 0;
+	i = indexs;
+	while (i < count + indexs)
 	{
-		if (chack_number(arg[i]))
+		if (chack_number(arg[j]))
 			return (1);
-		lo = ft_atoi(arg[i]);
+		lo = ft_atoi(arg[j++]);
 		if (lo > 2147483647 || lo < -2147483648)
 			return (1);
 		mas[i++] = (int)lo;
 	}
-	if (check_duplikat(mas, count))
-		return (1);
+	return (0);
+}
+
+int	check_argv(int **mas, char **argv, size_t *count)
+{
+	size_t	i;
+	size_t	cou;
+	int		*ptr;
+	char	**arg;
+
+	i = 0;
+	cou = 0;
+	while (i < *count)
+	{
+		arg = ft_split(argv[i], ' ');
+		if (!arg || !arg[0])
+			return (free_arg(arg) + 1);
+		ptr = malloc ((cou + cou_mas(arg)) * sizeof(int));
+		if (!ptr)
+			return (free_error(arg, ptr));
+		*mas = ft_intlcpy(ptr, *mas, cou);
+		if (check_mas(*mas, arg, cou_mas(arg), cou))
+			return (free_error(arg, *mas));
+		cou += cou_mas(arg);
+		free_arg(arg);
+		++i;
+	}
+	*count = cou;
 	return (0);
 }

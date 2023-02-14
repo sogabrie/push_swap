@@ -6,7 +6,7 @@
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:37:57 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/13 21:13:42 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/02/14 21:45:10 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,31 @@ int	main(int argc, char **argv)
 	int		*mas;
 	t_stack	*a;
 	t_stack	*b;
+	size_t	ac;
 
 	if (argc < 2)
 		return (write (1, "\n", 1) && 0);
 	mas = malloc(argc * sizeof(int));
-	printf("argc = %d\n", argc);
+	//printf("argc = %d\n", argc);
 	if (!mas)
 		return (write (1, "ERROR_1\n", 8) && 0);
-	if (check_argv(mas, ++argv, --argc))
+	ac = (size_t)(argc - 1);
+	if (check_argv(&mas, ++argv, &ac))
 		return (write (1, "ERROR_2\n", 8) && 0);
+	if (check_duplikat(mas, ac))
+			return (write (1, "ERROR_3", 8) && 0);
     a = constructor_stack();
     b = constructor_stack();
     if (!a && !b)
-        return (write(1, "ERROR_3\n", 8) && 0);
-    initialization_stack(a, mas, argc);
-
+        return (write(1, "ERROR_4\n", 8) && 0);
+    initialization_stack(a, mas, ac);
+	free(mas);
 	int i = 0;
 	while (i++ < 5)
 		pb_swap(a, b);
 	//rra_swap(a);
 	//rrb_swap(b);
-	rrr_swap(a, b);
+	//rrr_swap(a, b);
 
     printf("stak a\n");
     print_stack(a);

@@ -6,7 +6,7 @@
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:39:23 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/13 20:52:17 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/02/14 21:06:21 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,20 @@ void	rra_swap(t_stack *a);
 void	rrb_swap(t_stack *b);
 void	rrr_swap(t_stack *a, t_stack *b);
 
-int		check_argv(int *mas, char **arg, int count);
+int		check_argv(int **mas, char **argv, size_t *count);
+int		check_mas(int *mas, char **arg, size_t count, size_t indexs);
+int		check_duplikat(int *mas, int count);
 long	ft_atoi(char *nptr);
 int		chack_number(char *mas);
+int		ft_strlen(char *a);
+
+char	**ft_split(char *s, char c);
+
+size_t	ft_strlcpy(char *dest, char *src, size_t size);
+size_t	cou_mas(char **mas);
+int		*ft_intlcpy(int *dest, int *src, size_t size);
+void	ft_zero(char **ptr, size_t i);
+
+int		free_arg(char **arg);
+int		free_error(char **arg, int *mas);
 #endif
