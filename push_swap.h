@@ -6,7 +6,7 @@
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:39:23 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/14 21:06:21 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/02/14 23:12:54 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		pop_stack(t_stack *st);
 
 t_stack	*constructor_stack(void);
 void	free_stack(t_stack *st);
-int		initialization_stack(t_stack *st, int *mas, long size);
+int		rst;initialization_stack(t_stack *st, int *mas, long size);
 
 void	sa_swap(t_stack *st);
 void	sb_swap(t_stack *st);
