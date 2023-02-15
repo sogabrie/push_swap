@@ -30,7 +30,7 @@ int	sort_last_data(t_stack *a)
 	return (0);
 }
 
-int	sort_try(t_stack *a)
+int	full_sort_try(t_stack *a)
 {
 	if (a->first->data > a->first->next->data && \
 			a->first->data > a->last->data)

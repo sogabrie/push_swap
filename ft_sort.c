@@ -15,12 +15,14 @@
 int	ft_sort(t_stack *a, t_stack *b)
 {
 	if (a->count == 3)
-		return (sort_try(a));
+		return (full_sort_try(a));
 	if (a->count < 3)
 		return (sort_mini(a));
 	(void)b;
 	/*while (check_sort(a) && a->count > 3)
 		check_and_push(b, a);
+    if (a->count == 3)
+        sort_try(a);
 	while (a->count > 0)
 		check_and_push(a, b);
 	roll_for_full_sort(a);

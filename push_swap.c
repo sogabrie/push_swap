@@ -61,10 +61,10 @@ int	main(int argc, char **argv)
 	//rrb_swap(b);
 	//rrr_swap(a, b);
 
-    //printf("stak a\n");
-    //print_stack(a);
-    //printf("stack b\n");
-    //print_stack(b);
+    printf("stak a\n");
+    print_stack(a);
+    printf("stack b\n");
+    print_stack(b);
 	free_stack(a);
 	free_stack(b);
 	//sleep(1000);

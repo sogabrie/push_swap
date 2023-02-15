@@ -78,7 +78,8 @@ int		free_error(char **arg, int *mas);
 
 int		ft_sort(t_stack *a, t_stack *b);
 
-int		sort_try(t_stack *a);
+int     sort_try(t_stack *a);
+int		full_sort_try(t_stack *a);
 int		sort_mini(t_stack *a);
 int		roll_for_full_sort(t_stack *a);
 
