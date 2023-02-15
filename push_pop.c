@@ -6,7 +6,7 @@
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:32:08 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/13 20:37:51 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/02/15 18:42:32 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	push_stack(t_stack *st, int value)
 	ls = malloc(sizeof(t_list));
 	if (!ls)
 		return (1);
-	ls->content = value;
+	ls->data = value;
 	ls->next = 0;
 	ls->prev = 0;
 	if (!st->count)
@@ -53,7 +53,7 @@ int	pop_stack(t_stack *st)
 
 	if (!st->count)
 		return (0);
-	i = st->first->content;
+	i = st->first->data;
 	if (st->count == 1)
 	{
 		free(st->first);

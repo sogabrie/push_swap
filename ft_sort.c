@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_1.c                                          :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 20:39:38 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/15 20:34:04 by sogabrie         ###   ########.fr       */
+/*   Created: 2023/02/15 15:54:51 by sogabrie          #+#    #+#             */
+/*   Updated: 2023/02/15 19:35:23 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	free_arg(char **arg)
+int	ft_sort(t_stack *a, t_stack *b)
 {
-	size_t	i;
-
-	i = 0;
-	if (!arg)
-		return (0);
-	while (arg[i])
-	{
-		if (arg[i])
-			free(arg[i]);
-		++i;
-	}
-	free(arg);
+	if (a->count == 3)
+		return (sort_try(a));
+	if (a->count < 3)
+		return (sort_mini(a));
+	(void)b;
+	/*while (check_sort(a) && a->count > 3)
+		check_and_push(b, a);
+	while (a->count > 0)
+		check_and_push(a, b);
+	roll_for_full_sort(a);
+	return (check_full_sort(a));*/
 	return (0);
-}
-
-int	free_error(char **arg, int *mas)
-{
-	if (mas)
-		free(mas);
-	return (free_arg(arg) + 1);
 }

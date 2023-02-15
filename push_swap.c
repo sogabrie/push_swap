@@ -6,7 +6,7 @@
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:37:57 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/14 22:14:03 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/02/15 20:55:15 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	print_stack(t_stack *st)
     ls = st->first;
     while(ls)
     {
-        printf("cont = %d\n", ls->content);
+        printf("cont = %d\n", ls->data);
         ls = ls->next;
     }
 }
@@ -53,19 +53,20 @@ int	main(int argc, char **argv)
         return (write(1, "ERROR_4\n", 8) && 0);
     initialization_stack(a, mas, ac);
 	free(mas);
-	int i = 0;
-	while (i++ < 5)
-		pb_swap(a, b);
+	ft_sort(a, b);
+	//int i = 0;
+	//while (i++ < 5)
+	//	pb_swap(a, b);
 	//rra_swap(a);
 	//rrb_swap(b);
 	//rrr_swap(a, b);
 
-    printf("stak a\n");
-    print_stack(a);
-    printf("stack b\n");
-    print_stack(b);
+    //printf("stak a\n");
+    //print_stack(a);
+    //printf("stack b\n");
+    //print_stack(b);
 	free_stack(a);
 	free_stack(b);
-
+	//sleep(1000);
     return (0);
 }

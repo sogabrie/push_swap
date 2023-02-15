@@ -6,7 +6,7 @@
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:48:15 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/13 20:49:44 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/02/15 18:45:16 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	ss_util(t_stack *st)
 
 	if (!st || st->count < 2)
 		return ;
-	i = st->first->content;
-	st->first->content = st->first->next->content;
-	st->first->next->content = i;
+	i = st->first->data;
+	st->first->data = st->first->next->data;
+	st->first->next->data = i;
 }
 
 void	sa_swap(t_stack *st)
