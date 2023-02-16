@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 17:45:23 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/15 19:53:33 by sogabrie         ###   ########.fr       */
+/*   Created: 2023/02/16 15:20:24 by sogabrie          #+#    #+#             */
+/*   Updated: 2023/02/16 17:46:20 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,52 @@ int	full_sort_try(t_stack *a)
 		return (sort_last_data(a));
 	rra_swap(a);
 	return (sort_last_data(a));
+}
+
+size_t	roll_util(t_stack *a)
+{
+	int		value;
+	t_list	*a2;
+	size_t	i;
+
+	a2 = a->first;
+	value = a2->data;
+	while (a2)
+	{
+		if (value > a2->data)
+			value = a2->data;
+		a2 = a2->next;
+	}
+	a2 = a->first;
+	i = 0;
+	while (a2->data != value)
+	{
+		++i;
+		a2 = a2->next;
+	}
+	return (i);
+}
+
+int	roll_for_full_sort(t_stack *a)
+{
+	size_t	i;
+	size_t	j;
+
+	i = roll_util(a);
+	j = 0;
+	if ((a->count / 2) < i)
+	{
+		while (j < a->count - i)
+		{
+			rra_swap(a);
+			++j;
+		}
+		return (0);
+	}
+	while (i > 0)
+	{
+		ra_swap(a);
+		--i;
+	}
+	return (0);
 }

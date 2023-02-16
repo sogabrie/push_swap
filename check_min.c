@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_pab.c                                         :+:      :+:    :+:   */
+/*   check_min.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 20:43:00 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/16 17:53:16 by sogabrie         ###   ########.fr       */
+/*   Created: 2023/02/16 17:55:42 by sogabrie          #+#    #+#             */
+/*   Updated: 2023/02/16 18:19:40 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	swap_pab(t_stack *st1, t_stack *st2)
+void	steps_count(t_stack *s1, t_stack *s2)
 {
-	if (!st1 || !st2 || !st2->count)
-		return (0);
-	return (push_stack (st1, pop_stack(st2)));
-}
+	t_list	*ls;
 
-int	pa_swap(t_stack *a, t_stack *b)
-{
-	write(1, "pa\n", 3);
-	return (swap_pab(a, b));
-}
 
-int	pb_swap(t_stack *b, t_stack *a)
+t_list	check_min(t_stack *s1, t_stack *s2)
 {
-	write(1, "pb\n", 3);
-	return (swap_pab(b, a));
+	t_list	*min;
+
+	steps_count(s1, s2);
 }

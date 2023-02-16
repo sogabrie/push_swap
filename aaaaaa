@@ -1,0 +1,83 @@
+int	check_and_push(t_stack *s1, t_stack *s2)
+{
+	t_list	*min;
+	size_t	i;
+
+	min = check_min(s1, s2);
+	i = 0;
+	if	(min->flag_1 < min->flag_2)
+	{
+		if ((s2->count / 2) < flag_1 && (s1->count - flag_s2) < flag_1 )
+		{
+			while (i < s2->count - flag_2)
+			{
+				rrr_swap(s2, s1);
+				++i;
+			}
+			while (i < s2->count - flag_1)
+			{
+				if (s2->name == 'a')
+					rrb_swap(s1);
+				else
+					rra_swap(s2);
+				++i;
+			}
+		}
+		else
+		{
+			while (i < flag_1)
+			{
+				rr_swap(s2, s1);
+				++i;
+			}
+			while (i < flag_2)
+			{
+				if (s2->name == 'a')
+					rb_swap(s1);
+				else
+					ra_swap(s2);
+				++i;
+			}
+		}
+	}
+	else
+	{
+		if ((s2->count / 2) < flag_2)
+		{
+			while (i < s2->count - flag_1)
+			{
+				rrr_swap(s2, s1);
+				++i;
+			}
+			while (i < s2->count - flag_2)
+			{
+				if (s2->name == 'a')
+					rra_swap(s2);
+				else
+					rrb_swap(s1);
+				++i;
+			}
+		}
+		else
+		{
+			while (i < flag_2)
+			{
+				rr_swap(s2, s1);
+				++i;
+			}
+			while (i < flag_1)
+			{
+				if (s2->name == 'a')
+					ra_swap(s2);
+				else
+					rb_swap(s1);
+				++i;
+			}
+		}
+	}
+	if (s2->name = 'a')
+		pb_swap(s1);
+	else
+		pa_swap(s2);
+	return (0);
+}

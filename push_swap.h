@@ -6,7 +6,7 @@
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:39:23 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/15 21:21:18 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/02/16 20:06:53 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,16 @@
 typedef struct s_list
 {
 	int				data;
+	size_t			steps;
+	size_t			flag_1;
+	size_t			flag_2;
 	struct s_list	*next;
 	struct s_list	*prev;
 }	t_list;
 
 typedef struct s_stack
 {
+	char 			name;
 	unsigned int	count;
 	struct s_list	*first;
 	struct s_list	*last;
@@ -40,7 +44,7 @@ typedef struct s_stack
 int		push_stack(t_stack *st, int value);
 int		pop_stack(t_stack *st);
 
-t_stack	*constructor_stack(void);
+t_stack	*constructor_stack(char name);
 void	free_stack(t_stack *st);
 int		initialization_stack(t_stack *st, int *mas, long size);
 
@@ -49,7 +53,7 @@ void	sb_swap(t_stack *st);
 void	ss_swap(t_stack *st_a, t_stack *st_b);
 
 int		pa_swap(t_stack *a, t_stack *b);
-int		pb_swap(t_stack *a, t_stack *b);
+int		pb_swap(t_stack *b, t_stack *a);
 
 void	ra_swap(t_stack *a);
 void	rb_swap(t_stack *b);
@@ -87,5 +91,7 @@ int		check_sort(t_stack *a);
 int		check_full_sort(t_stack *a);
 
 int		check_and_push(t_stack *st1, t_stack *st2);
+
+t_list	check_min(t_stack *s1, t_stack *s2);
 
 #endif

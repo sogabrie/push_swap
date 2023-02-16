@@ -6,19 +6,20 @@
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 18:34:49 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/15 18:41:52 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:37:33 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*constructor_stack(void)
+t_stack	*constructor_stack(char name)
 {
 	t_stack	*st;
 
 	st = malloc(sizeof(t_stack));
 	if (!st)
 		return (NULL);
+	st->name = name;
 	st->count = 0;
 	st->first = 0;
 	st->last = 0;
