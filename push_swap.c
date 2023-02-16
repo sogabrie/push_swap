@@ -56,19 +56,11 @@ int	main(int argc, char **argv)
     initialization_stack(a, mas, ac);
 	printf("main_4\n");
 	free(mas);
-	//ft_sort(a, b);
+	ft_sort(a, b);
 	//int i = 0;
 	//while (i++ < 5)
 	//	pb_swap(a, b);
-	//rra_swap(a);
-	//rrb_swap(b);
-	//rrr_swap(a, b);
 
-	//roll_for_full_sort(a);
-	//if (!check_sort(a))
-	//	printf("---------OK----------\n");
-	//else
-	//	printf("---------ERROR--------\n");
     printf("stak %c\n", a->name);
     print_stack(a);
     printf("stack %c\n", b->name);

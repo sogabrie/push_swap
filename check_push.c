@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_sort.h"
+#include "push_swap.h"
 
 int	check_and_push(t_stack *s1, t_stack *s2)
 {
@@ -21,7 +21,8 @@ int	check_and_push(t_stack *s1, t_stack *s2)
 	i = 0;
 	if (min->flag_1 < min->flag_2)
 	{
-		if (min->flag_1 < (s1->count - min->flag_2))
+		if (min->flag_1 < (s1->count - min->flag_2) || \
+                min->flag_2 < (s2->count - min->flag_1))
 		{
 			while (i < min->flag_1)
 			{
@@ -39,12 +40,12 @@ int	check_and_push(t_stack *s1, t_stack *s2)
 		}
 		else
 		{
-			while (i < s1->count)
+			while (i < s1->count - min->flag_2)
 			{
 				rrr_swap(s1, s2);
 				++i;
 			}
-			while (i < s2->count)
+			while (i < s2->count - min->flag_1)
 			{
 				if (s2->name == 'a')
 					rra_swap(s2);
@@ -56,7 +57,8 @@ int	check_and_push(t_stack *s1, t_stack *s2)
 	}
 	else
 	{
-		if (min->flag_2 < (s2->count - min->flag_1))
+		if (min->flag_2 < (s2->count - min->flag_1) || \
+                min->flag_1 < s1->count - min-flag_2)
 		{
 			while (i < min->flag_2)
 			{
@@ -74,14 +76,14 @@ int	check_and_push(t_stack *s1, t_stack *s2)
 		}
 		else
 		{
-			while (i < s2->count)
+			while (i < s2->count - min->flag_1)
 			{
 				rrr_swap(s1, s2);
 				++i;
 			}
-			while (i < s1->count)
+			while (i < s1->count - min->flag_2)
 			{
-				if (s2->name == 'a')
+				if (s1->name == 'a')
 					rra_swap(s1);
 				else
 					rrb_swap(s1);
@@ -90,8 +92,8 @@ int	check_and_push(t_stack *s1, t_stack *s2)
 		}
 	}
 	if (s2->name == 'a')
-		pb_swap(s1);
+		pb_swap(s2, s1);
 	else
-		pa_swap(s2);
+		pa_swap(s1, s2);
 	return (0);
 }

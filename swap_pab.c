@@ -25,7 +25,7 @@ int	pa_swap(t_stack *a, t_stack *b)
 	return (swap_pab(a, b));
 }
 
-int	pb_swap(t_stack *b, t_stack *a)
+int	pb_swap(t_stack *a, t_stack *b)
 {
 	write(1, "pb\n", 3);
 	return (swap_pab(b, a));

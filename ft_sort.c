@@ -18,18 +18,22 @@ int	ft_sort(t_stack *a, t_stack *b)
 		return (full_sort_try(a));
 	if (a->count < 3)
 		return (sort_mini(a));
-	(void)b;
-	/*
 	pb_swap(a, b);
 	if (a->count > 3)
 		pb_swap(a, b);
 	while (check_sort(a) && a->count > 3)
-		check_and_push(b, a, pb_swap);
+    {
+		check_and_push(b, a);
+        printf("ft_sort_1\n");
+    }
     if (a->count == 3)
         full_sort_try(a);
-	while (b->count > 0)
-		check_and_push(a, b, pa_swap);
+
+    while (b->count > 0)
+    {
+        check_and_push(a, b);
+    }
 	roll_for_full_sort(a);
-	return (check_full_sort(a));*/
-	return (0);
+	return (check_full_sort(a));
+	//return (0);
 }

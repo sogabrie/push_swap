@@ -37,6 +37,8 @@ typedef struct s_stack
 {
 	char 			name;
 	unsigned int	count;
+    int             min_data;
+    int             maxs_data;
 	struct s_list	*first;
 	struct s_list	*last;
 }	t_stack;
@@ -53,7 +55,7 @@ void	sb_swap(t_stack *st);
 void	ss_swap(t_stack *st_a, t_stack *st_b);
 
 int		pa_swap(t_stack *a, t_stack *b);
-int		pb_swap(t_stack *b, t_stack *a);
+int		pb_swap(t_stack *a, t_stack *b);
 
 void	ra_swap(t_stack *a);
 void	rb_swap(t_stack *b);
@@ -92,6 +94,10 @@ int		check_full_sort(t_stack *a);
 
 int		check_and_push(t_stack *st1, t_stack *st2);
 
-t_list	check_min(t_stack *s1, t_stack *s2);
+t_list	*check_min(t_stack *s1, t_stack *s2);
+
+// sarqel es erku funqcyan u steck_min_maxs kpcnel
+size_t  ret_indexs(t_stack *s1, int data);
+void    steck_min_max(t_stack *s1);
 
 #endif

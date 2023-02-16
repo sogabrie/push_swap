@@ -1,7 +1,8 @@
 SRCS			= push_swap.c initialization_stack.c swap_sab.c \
 				  push_pop.c swap_pab.c swap_rab.c swap_rrab.c \
 				  check.c check_util.c ft_split.c cpy_cat_util.c \
-				  error_1.c ft_sort.c ft_sort_mini.c check_sort.c
+				  error_1.c ft_sort.c ft_sort_mini.c check_sort.c \
+				  check_push.c check_min.c
 
 OBJS			= $(SRCS:.c=.o)
 
