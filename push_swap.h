@@ -6,7 +6,7 @@
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:39:23 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/16 20:06:53 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/02/17 15:54:18 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,6 @@ t_list	*check_min(t_stack *s1, t_stack *s2);
 
 // sarqel es erku funqcyan u steck_min_maxs kpcnel
 size_t  ret_indexs(t_stack *s1, int data);
-void    steck_min_max(t_stack *s1);
+void    stack_min_maxs(t_stack *s1);
 
 #endif

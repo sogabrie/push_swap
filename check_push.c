@@ -6,18 +6,21 @@
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:42:18 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/16 20:06:47 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/02/17 16:16:50 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 int	check_and_push(t_stack *s1, t_stack *s2)
 {
 	t_list	*min;
 	size_t	i;
 
+	stack_min_maxs(s1);
 	min = check_min(s1, s2);
+	//printf("check_push_1 flag_1 = %zu flag_2 = %zu\n", min->flag_1, min->flag_2);
 	i = 0;
 	if (min->flag_1 < min->flag_2)
 	{
@@ -58,7 +61,7 @@ int	check_and_push(t_stack *s1, t_stack *s2)
 	else
 	{
 		if (min->flag_2 < (s2->count - min->flag_1) || \
-                min->flag_1 < s1->count - min-flag_2)
+                min->flag_1 < s1->count - min->flag_2)
 		{
 			while (i < min->flag_2)
 			{
