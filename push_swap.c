@@ -61,10 +61,10 @@ int	main(int argc, char **argv)
 	//while (i++ < 5)
 	//	pb_swap(a, b);
 
-    printf("stak %c\n", a->name);
-    print_stack(a);
-	printf("stack %c\n", b->name);
-    print_stack(b);
+    //printf("stak %c\n", a->name);
+    //print_stack(a);
+	//printf("stack %c\n", b->name);
+    //print_stack(b);
 	free_stack(a);
 	free_stack(b);
 	//sleep(1000);

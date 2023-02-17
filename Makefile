@@ -32,4 +32,10 @@ re:				fclean $(NAME)
 bonus:			$(OBJS) $(BONUS_OBJS) Makefile
 				$(CC) $(OBJS) $(BONUS_OBJS) -o $(NAME)
 
-.PHONY:			all clean fclean re bonus
+test:				$(NAME)	
+					$(eval ARG = $(shell shuf -i 0-5000 -n 100))
+					./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
+
+.PHONY:			all clean fclean re bonus test
