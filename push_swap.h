@@ -6,7 +6,7 @@
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:39:23 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/17 15:54:18 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/02/18 22:54:38 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,16 @@
     ERROR = 1 
 };*/
 
+typedef struct s_pair
+{
+	int	data;
+	int	indexs;
+}		t_pair;
+
 typedef struct s_list
 {
 	int				data;
+	size_t			indexs;
 	size_t			steps;
 	size_t			flag_1;
 	size_t			flag_2;

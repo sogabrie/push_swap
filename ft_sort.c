@@ -6,7 +6,7 @@
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:54:51 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/17 16:16:03 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/02/18 22:55:14 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ int	ft_sort(t_stack *a, t_stack *b)
 		return (full_sort_try(a));
 	if (a->count < 3)
 		return (sort_mini(a));
-	if (check_sort(a))
-		pb_swap(a, b);
+	if (!check_sort(a))
+		return (roll_for_full_sort(a));
 	if (check_sort(a) && a->count > 3)
 		pb_swap(a, b);
+	
 	while (check_sort(a) && a->count > 3)
     {
 		check_and_push(b, a);
