@@ -2,7 +2,8 @@ SRCS			= push_swap.c initialization_stack.c swap_sab.c \
 				  push_pop.c swap_pab.c swap_rab.c swap_rrab.c \
 				  check.c check_util.c ft_split.c cpy_cat_util.c \
 				  error_1.c ft_sort.c ft_sort_mini.c check_sort.c \
-				  check_push.c check_min.c check_min_util.c
+				  check_push.c check_min.c check_min_util.c push_a_b.c \
+				  sort.c crat_indexs.c
 
 OBJS			= $(SRCS:.c=.o)
 
@@ -37,5 +38,13 @@ test:				$(NAME)
 					./push_swap $(ARG) | ./checker_Mac $(ARG)
 					@echo -n "Instructions: "
 					@./push_swap $(ARG) | wc -l
+
+test_linux:			$(NAME)	
+					$(eval ARG = $(shell shuf -i 0-2000000 -n 500))
+					./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
+					./push_swap $(ARG)
+
 
 .PHONY:			all clean fclean re bonus test

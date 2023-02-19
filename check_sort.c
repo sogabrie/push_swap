@@ -16,6 +16,8 @@ int	check_full_sort(t_stack *a)
 {
 	t_list	*i;
 
+    //if (!a->count)
+    //    return (0);
 	i = a->first;
 	while (i->next)
 	{

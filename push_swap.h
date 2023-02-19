@@ -25,8 +25,8 @@
 
 typedef struct s_pair
 {
-	int	data;
-	int	indexs;
+	int		data;
+	size_t	indexs;
 }		t_pair;
 
 typedef struct s_list
@@ -43,7 +43,7 @@ typedef struct s_list
 typedef struct s_stack
 {
 	char 			name;
-	unsigned int	count;
+	size_t			count;
     int             min_data;
     int             maxs_data;
 	struct s_list	*first;
@@ -108,13 +108,13 @@ void    stack_min_maxs(t_stack *s1); //jnjel
 
 int		my_sort(t_stack *a, t_stack *b);
 
-int		sort_five(t_steck *a, t_steck *b);
+//int		sort_five(t_steck *a, t_steck *b); //sraxel
 
 void	crat_indexs(t_stack *st);
-size_t	crat_const(size_t i); //sarqel
+//size_t	crat_const(size_t i); //sarqel
 
-void	push_a_b(t_steck *a, t_steck *b, size_t i); //sarqel
-void	push_b_a(t_steck *a, t_steck *b, size_t i); //sargel
+void	push_a_b(t_stack *a, t_stack *b, size_t i);
+//void	push_b_a(t_steck *a, t_steck *b, size_t i); //sargel
 
 
 #endif

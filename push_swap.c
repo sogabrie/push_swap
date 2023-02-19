@@ -24,7 +24,7 @@ void	print_stack(t_stack *st)
     ls = st->first;
     while(ls)
     {
-        printf("cont = %d\n", ls->data);
+        printf("cont = %d indexs = %lu \n", ls->data, ls->indexs);
         ls = ls->next;
     }
 }
@@ -56,15 +56,17 @@ int	main(int argc, char **argv)
     initialization_stack(a, mas, ac);
 	//printf("main_4\n");
 	free(mas);
-	ft_sort(a, b);
+	//ft_sort(a, b);
 	//int i = 0;
 	//while (i++ < 5)
 	//	pb_swap(a, b);
 
-    //printf("stak %c\n", a->name);
-    //print_stack(a);
-	//printf("stack %c\n", b->name);
-    //print_stack(b);
+    my_sort(a, b);
+
+    printf("stak %c\n", a->name);
+    print_stack(a);
+	printf("stack %c\n", b->name);
+    print_stack(b);
 	free_stack(a);
 	free_stack(b);
 	//sleep(1000);
