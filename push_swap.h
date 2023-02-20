@@ -33,19 +33,13 @@ typedef struct s_list
 {
 	int				data;
 	size_t			indexs;
-	size_t			steps;
-	size_t			flag_1;
-	size_t			flag_2;
 	struct s_list	*next;
 	struct s_list	*prev;
 }	t_list;
 
 typedef struct s_stack
 {
-	char 			name;
 	size_t			count;
-    int             min_data;
-    int             maxs_data;
 	struct s_list	*first;
 	struct s_list	*last;
 }	t_stack;
@@ -53,7 +47,7 @@ typedef struct s_stack
 int		push_stack(t_stack *st, int value);
 int		pop_stack(t_stack *st);
 
-t_stack	*constructor_stack(char name);
+t_stack	*constructor_stack(void);
 void	free_stack(t_stack *st);
 int		initialization_stack(t_stack *st, int *mas, long size);
 
@@ -89,32 +83,23 @@ void	ft_zero(char **ptr, size_t i);
 int		free_arg(char **arg);
 int		free_error(char **arg, int *mas);
 
-int		ft_sort(t_stack *a, t_stack *b);//jnjel
-
 int     sort_try(t_stack *a);
 int		full_sort_try(t_stack *a);
 int		sort_mini(t_stack *a);
+int 	sort_five(t_stack *a, t_stack *b);
 int		roll_for_full_sort(t_stack *a);
 
 int		check_sort(t_stack *a);
 int		check_full_sort(t_stack *a);
 
-int		check_and_push(t_stack *st1, t_stack *st2);//jnjel
-
-t_list	*check_min(t_stack *s1, t_stack *s2); //jnjel
-
-size_t  ret_indexs(t_stack *s1, int data); 
-void    stack_min_maxs(t_stack *s1); //jnjel
-
 int		my_sort(t_stack *a, t_stack *b);
 
-//int		sort_five(t_steck *a, t_steck *b); //sraxel
+//int		sort_five(t_steck *a, t_steck *b); //sragel
 
 void	crat_indexs(t_stack *st);
 //size_t	crat_const(size_t i); //sarqel
 
 void	push_a_b(t_stack *a, t_stack *b, size_t i);
-void	push_b_a(t_stack *a, t_stack *b);//sargel
-
+void	push_b_a(t_stack *a, t_stack *b);
 
 #endif

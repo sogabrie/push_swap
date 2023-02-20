@@ -12,14 +12,13 @@
 
 #include "push_swap.h"
 
-t_stack	*constructor_stack(char name)
+t_stack	*constructor_stack(void)
 {
 	t_stack	*st;
 
 	st = malloc(sizeof(t_stack));
 	if (!st)
 		return (NULL);
-	st->name = name;
 	st->count = 0;
 	st->first = 0;
 	st->last = 0;

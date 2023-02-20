@@ -48,8 +48,8 @@ int	main(int argc, char **argv)
 	//printf("Main_1\n");
 	if (check_duplikat(mas, ac))
 			return (write (1, "ERROR_3", 8) && 0);
-    a = constructor_stack('a');
-    b = constructor_stack('b');
+    a = constructor_stack();
+    b = constructor_stack();
 	//printf("main_3\n");
     if (!a && !b)
         return (write(1, "ERROR_4\n", 8) && 0);
@@ -63,9 +63,9 @@ int	main(int argc, char **argv)
 
     my_sort(a, b);
 
-    //printf("stak %c\n", a->name);
+    //printf("stak A\n");
     //print_stack(a);
-	//printf("stack %c\n", b->name);
+	//printf("stack B\n");
     //print_stack(b);
 	free_stack(a);
 	free_stack(b);

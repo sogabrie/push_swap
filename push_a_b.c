@@ -57,7 +57,6 @@ void	push_b_a(t_stack *a, t_stack *b)
 {
     size_t  ind;
 
-    //printf("push_b_a_1\n");
     while (b->count > 0)
     {
         ind = get_ind(b);
@@ -67,10 +66,8 @@ void	push_b_a(t_stack *a, t_stack *b)
 
 void	push_a_b(t_stack *a, t_stack *b, size_t i)
 {
-    //printf("push_a_b_1 \n");
     while (a->count > 0)
     {
-        //printf("skizb a->caunt %lu\n", a->count);
         if (a->first->indexs <= b->count)
         {
             pb_swap(a,b);
@@ -83,6 +80,5 @@ void	push_a_b(t_stack *a, t_stack *b, size_t i)
         }
         else
             ra_swap(a);
-        //printf("verj  a->count = %lu\n", a->count);
     }
 }

@@ -68,4 +68,5 @@ void	crat_indexs(t_stack *st)
 	}
 	bubble_sort(mas, st->count);
 	add_indexs(mas, st);
+	free(mas);
 }
