@@ -6,7 +6,7 @@
 /*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 20:53:23 by sogabrie          #+#    #+#             */
-/*   Updated: 2023/02/19 21:11:56 by sogabrie         ###   ########.fr       */
+/*   Updated: 2023/02/20 20:43:55 by sogabrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,10 @@ int	my_sort(t_stack *a, t_stack *b)
 	if (!check_sort(a))
 		return (roll_for_full_sort(a));
 	crat_indexs(a);
-	if (a->count <= 10)
+	if (a->count <= 12)
 		return (sort_five(a, b));
-	i = 15;
-	//i = crat_const(a->count);
+	i = crat_const(a->count);
 	push_a_b(a, b, i);
 	push_b_a(a, b);
-    return (0);
+	return (0);
 }

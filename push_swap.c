@@ -12,22 +12,22 @@
 
 #include "push_swap.h"
 
-void	print_stack(t_stack *st)
-{
-    t_list  *ls;
+// void	print_stack(t_stack *st)
+// {
+//     t_list  *ls;
 
-    if (!st || st->count < 1)
-    {
-        printf("ERROR Steck frry\n");
-        return ;
-    }
-    ls = st->first;
-    while(ls)
-    {
-        printf("cont = %d indexs = %lu \n", ls->data, ls->indexs);
-        ls = ls->next;
-    }
-}
+//     if (!st || st->count < 1)
+//     {
+//         printf("ERROR Steck frry\n");
+//         return ;
+//     }
+//     ls = st->first;
+//     while(ls)
+//     {
+//         printf("cont = %d indexs = %lu \n", ls->data, ls->indexs);
+//         ls = ls->next;
+//     }
+// }
 
 int	main(int argc, char **argv)
 {
@@ -39,36 +39,21 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (write (1, "\n", 1) && 0);
 	mas = malloc(argc * sizeof(int));
-	//printf("argc = %d\n", argc);
 	if (!mas)
-		return (write (1, "ERROR_1\n", 8) && 0);
+		return (write (1, "Error\n", 6) && 0);
 	ac = (size_t)(argc - 1);
 	if (check_argv(&mas, ++argv, &ac))
-		return (write (1, "ERROR_2\n", 8) && 0);
-	//printf("Main_1\n");
+		return (write (1, "Error\n", 6) && 0);
 	if (check_duplikat(mas, ac))
-			return (write (1, "ERROR_3", 8) && 0);
-    a = constructor_stack();
-    b = constructor_stack();
-	//printf("main_3\n");
-    if (!a && !b)
-        return (write(1, "ERROR_4\n", 8) && 0);
-    initialization_stack(a, mas, ac);
-	//printf("main_4\n");
+		return (write (1, "Error", 6) && 0);
+	a = constructor_stack();
+	b = constructor_stack();
+	if (!a && !b)
+		return (write(1, "Error\n", 6) && 0);
+	initialization_stack(a, mas, ac);
 	free(mas);
-	//ft_sort(a, b);
-	//int i = 0;
-	//while (i++ < 5)
-	//	pb_swap(a, b);
-
-    my_sort(a, b);
-
-    //printf("stak A\n");
-    //print_stack(a);
-	//printf("stack B\n");
-    //print_stack(b);
+	my_sort(a, b);
 	free_stack(a);
 	free_stack(b);
-	//sleep(1000);
-    return (0);
+	return (0);
 }

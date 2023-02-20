@@ -17,12 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-/*enum t_error
-{
-    OK =    0,
-    ERROR = 1 
-};*/
-
 typedef struct s_pair
 {
 	int		data;
@@ -83,10 +77,10 @@ void	ft_zero(char **ptr, size_t i);
 int		free_arg(char **arg);
 int		free_error(char **arg, int *mas);
 
-int     sort_try(t_stack *a);
+int		sort_try(t_stack *a);
 int		full_sort_try(t_stack *a);
 int		sort_mini(t_stack *a);
-int 	sort_five(t_stack *a, t_stack *b);
+int		sort_five(t_stack *a, t_stack *b);
 int		roll_for_full_sort(t_stack *a);
 
 int		check_sort(t_stack *a);
@@ -94,10 +88,8 @@ int		check_full_sort(t_stack *a);
 
 int		my_sort(t_stack *a, t_stack *b);
 
-//int		sort_five(t_steck *a, t_steck *b); //sragel
-
-void	crat_indexs(t_stack *st);
-//size_t	crat_const(size_t i); //sarqel
+int		crat_indexs(t_stack *st);
+size_t	crat_const(size_t i);
 
 void	push_a_b(t_stack *a, t_stack *b, size_t i);
 void	push_b_a(t_stack *a, t_stack *b);

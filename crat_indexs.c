@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   crat_indexs.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/20 20:55:07 by sogabrie          #+#    #+#             */
+/*   Updated: 2023/02/20 20:55:12 by sogabrie         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	bubble_sort(t_pair	*mas, size_t count)
@@ -49,24 +61,25 @@ void	add_indexs(t_pair *mas, t_stack *st)
 	}
 }
 
-void	crat_indexs(t_stack *st)
+int	crat_indexs(t_stack *st)
 {
 	t_pair	*mas;
 	int		i;
 	t_list	*cp;
 
 	mas = malloc(sizeof(t_pair) * st->count);
-	if(!mas)
-		return ;
+	if (!mas)
+		return (1);
 	i = 0;
 	cp = st->first;
 	while (cp)
 	{
 		mas[i].data = cp->data;
 		cp = cp->next;
-        ++i;
+		++i;
 	}
 	bubble_sort(mas, st->count);
 	add_indexs(mas, st);
 	free(mas);
+	return (0);
 }
