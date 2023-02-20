@@ -6,15 +6,17 @@ SRCS			= push_swap.c initialization_stack.c swap_sab.c \
 
 OBJS			= $(SRCS:.c=.o)
 
-#BONUS			= 
+BONUS			= 
 
-#BONUS_OBJS		= $(BONUS:.c=.o)
+BONUS_OBJS		= $(BONUS:.c=.o)
 
 CC				= gcc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror
 
 NAME			= push_swap
+
+BONUS_NAME		= checker
 
 all:			$(OBJS) $(NAME) Makefile
 
@@ -25,26 +27,28 @@ clean:
 				$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean:			clean
-				$(RM) $(NAME)
+				$(RM) $(NAME) $(BONUS_NAME)
 
-re:				fclean $(NAME)
+re:				fclean $(NAME) $(BONUS_NAME)
 
-bonus:			$(OBJS) $(BONUS_OBJS) Makefile
-				$(CC) $(OBJS) $(BONUS_OBJS) -o $(NAME)
+bonus:			$(BONUS_OBJS) $(BONUS_NAME)
 
-test:				$(NAME)	
-					$(eval ARG = $(shell jot -r 500 0 2000000))
-					./push_swap $(ARG) | ./checker_Mac $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-#					./push_swap $(ARG)
+$(BONUS_NAME):	$(BONUS_OBJS) Makefile
+				$(CC) $(BONUS_OBJS) -o $(BONUS_NAME)
 
-test_linux:			$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-2000000 -n 500))
-					./push_swap $(ARG) | ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-					./push_swap $(ARG)
+test:			$(NAME)	
+				$(eval ARG = $(shell jot -r 500 0 2000000))
+				./push_swap $(ARG) | ./checker_Mac $(ARG)
+				@echo -n "Instructions: "
+				@./push_swap $(ARG) | wc -l
+#				./push_swap $(ARG)
+
+test_linux:		$(NAME)	
+				$(eval ARG = $(shell shuf -i 0-2000000 -n 500))
+				./push_swap $(ARG) | ./checker_linux $(ARG)
+				@echo -n "Instructions: "
+				@./push_swap $(ARG) | wc -l
+				./push_swap $(ARG)
 
 
-.PHONY:			all clean fclean re bonus test
+.PHONY:			all clean fclean re bonus test bonus
