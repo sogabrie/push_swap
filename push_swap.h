@@ -114,7 +114,7 @@ void	crat_indexs(t_stack *st);
 //size_t	crat_const(size_t i); //sarqel
 
 void	push_a_b(t_stack *a, t_stack *b, size_t i);
-//void	push_b_a(t_steck *a, t_steck *b, size_t i); //sargel
+void	push_b_a(t_stack *a, t_stack *b);//sargel
 
 
 #endif

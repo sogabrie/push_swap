@@ -34,10 +34,11 @@ bonus:			$(OBJS) $(BONUS_OBJS) Makefile
 				$(CC) $(OBJS) $(BONUS_OBJS) -o $(NAME)
 
 test:				$(NAME)	
-					$(eval ARG = $(shell jot -r 500 0 2000000))
+					$(eval ARG = $(shell jot -r 100 0 2000000))
 					./push_swap $(ARG) | ./checker_Mac $(ARG)
 					@echo -n "Instructions: "
 					@./push_swap $(ARG) | wc -l
+#					./push_swap $(ARG)
 
 test_linux:			$(NAME)	
 					$(eval ARG = $(shell shuf -i 0-2000000 -n 500))

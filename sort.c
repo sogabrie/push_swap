@@ -27,12 +27,12 @@ int	my_sort(t_stack *a, t_stack *b)
 		return (roll_for_full_sort(a));
 	//printf("my_sort_3\n");
 	crat_indexs(a);
-	i = 30;
+	i = 15;
 	//i = crat_const(a->count);
 	//printf("my_sort_4\n");
 	push_a_b(a, b, i);
 	//printf("my_sort_5\n");
-	//push_b_a(a, b, i);
+	push_b_a(a, b);
 	//return (check_full_sort(a));
     return (0);
 }
