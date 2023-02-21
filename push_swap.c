@@ -38,18 +38,14 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (write (1, "\n", 1) && 0);
-	mas = malloc(argc * sizeof(int));
-	if (!mas)
-		return (write (1, "Error\n", 6) && 0);
-	ac = (size_t)(argc - 1);
-	if (check_argv(&mas, ++argv, &ac))
-		return (write (1, "Error\n", 6) && 0);
-	if (check_duplikat(mas, ac))
-		return (write (1, "Error", 6) && 0);
 	a = constructor_stack();
 	b = constructor_stack();
-	if (!a && !b)
-		return (write(1, "Error\n", 6) && 0);
+	mas = malloc(argc * sizeof(int));
+	if (!mas || !a || !b)
+		return (write (1, "Error\n", 6) && 0);
+	ac = (size_t)(argc - 1);
+	if (check_argv(&mas, ++argv, &ac) || check_duplikat(mas, ac))
+		return (write (1, "Error\n", 6) && 0);
 	initialization_stack(a, mas, ac);
 	free(mas);
 	my_sort(a, b);
