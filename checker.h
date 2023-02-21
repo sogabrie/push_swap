@@ -64,8 +64,10 @@ int		free_error(char **arg, int *mas);
 
 int		check_full_sort(t_stack *a);
 
+int		ft_strcmp_n(char *s1, char *s2);
 int		ft_strcmp(char *s1, char *s2);
 
 char	**get_args();
+int		do_args(t_stack *a, t_stack *b, char **args);
 
 #endif

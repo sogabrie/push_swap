@@ -24,12 +24,12 @@ size_t	check_corect_and_end(char *a)
 		return (1);
 	if (ft_strlen(a) == 1)
 		return (2);
-	if (!ft_strcmp(a, "sa") || \
-		!ft_strcmp(a, "sb") || !ft_strcmp(a, "ss") || \
-		!ft_strcmp(a, "pa") || !ft_strcmp(a, "pb") || \
-		!ft_strcmp(a, "ra") || !ft_strcmp(a, "rb") || \
-		!ft_strcmp(a, "rr") || !ft_strcmp(a, "rra") || \
-		!ft_strcmp(a, "rrb") || !ft_strcmp(a, "rrr"))
+	if (!ft_strcmp_n(a, "sa") || \
+		!ft_strcmp_n(a, "sb") || !ft_strcmp_n(a, "ss") || \
+		!ft_strcmp_n(a, "pa") || !ft_strcmp_n(a, "pb") || \
+		!ft_strcmp_n(a, "ra") || !ft_strcmp_n(a, "rb") || \
+		!ft_strcmp_n(a, "rr") || !ft_strcmp_n(a, "rra") || \
+		!ft_strcmp_n(a, "rrb") || !ft_strcmp_n(a, "rrr"))
 		return (0);
 	return (1);
 }
