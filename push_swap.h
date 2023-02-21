@@ -17,12 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct s_pair
-{
-	int		data;
-	size_t	indexs;
-}		t_pair;
-
 typedef struct s_list
 {
 	int				data;

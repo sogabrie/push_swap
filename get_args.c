@@ -12,9 +12,7 @@ char	**mas_cat_arg(char **arg_2, char **arg, size_t i)
 		arg_2[j] = arg[j];
 		++j;
 	}
-	//printf("mas_cat_arg_4\n");
 	free(arg);
-	//printf("mas_cat_arg_5\n");
 	return (arg_2);
 }
 

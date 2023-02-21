@@ -4,12 +4,10 @@ int	check_corect(t_stack *a, t_stack *b)
 {
 	char	**arg;
 
-	//printf("check_correct_1\n");
 	arg = get_args();
 	if (!arg)
 		return (write (1, "Error\n", 6) && 1);
 	int i = 0;
-	//printf("check_correct_3\n");
 	while (arg[i])
 		printf("argument = %s", arg[i++]);
 	(void)a;

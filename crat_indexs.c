@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	bubble_sort(t_pair	*mas, size_t count)
+void	bubble_sort(int	*mas, size_t count)
 {
 	size_t	i;
 	size_t	j;
@@ -24,11 +24,11 @@ void	bubble_sort(t_pair	*mas, size_t count)
 		j = i + 1;
 		while (j < count)
 		{
-			if (mas[i].data > mas[j].data)
+			if (mas[i] > mas[j])
 			{
-				cp = mas[i].data;
-				mas[i].data = mas[j].data;
-				mas[j].data = cp;
+				cp = mas[i];
+				mas[i] = mas[j];
+				mas[j] = cp;
 			}
 			++j;
 		}
@@ -36,25 +36,19 @@ void	bubble_sort(t_pair	*mas, size_t count)
 	}
 }
 
-void	add_indexs(t_pair *mas, t_stack *st)
+void	add_indexs(int *mas, t_stack *st)
 {
 	size_t	i;
 	t_list	*ls;
 
-	i = 0;
-	while (i <= st->count)
-	{
-		mas[i].indexs = i;
-		++i;
-	}
 	ls = st->first;
 	while (ls)
 	{
 		i = 0;
 		while (i < st->count)
 		{
-			if (ls->data == mas[i].data)
-				ls->indexs = mas[i].indexs;
+			if (ls->data == mas[i])
+				ls->indexs = i;
 			++i;
 		}
 		ls = ls->next;
@@ -63,18 +57,18 @@ void	add_indexs(t_pair *mas, t_stack *st)
 
 int	crat_indexs(t_stack *st)
 {
-	t_pair	*mas;
+	int		*mas;
 	int		i;
 	t_list	*cp;
 
-	mas = malloc(sizeof(t_pair) * st->count);
+	mas = malloc(sizeof(int) * st->count);
 	if (!mas)
 		return (1);
 	i = 0;
 	cp = st->first;
 	while (cp)
 	{
-		mas[i].data = cp->data;
+		mas[i] = cp->data;
 		cp = cp->next;
 		++i;
 	}
