@@ -6,11 +6,11 @@ SRCS			= push_swap.c initialization_stack.c swap_sab.c \
 
 OBJS			= $(SRCS:.c=.o)
 
-BONUS			= push_swap.c initialization_stack.c swap_sab.c \
+BONUS			= checker.c initialization_stack.c swap_sab.c \
 				  push_pop.c swap_pab.c swap_rab.c swap_rrab.c \
 				  check.c check_util.c ft_split.c cpy_cat_util.c \
-				  error_1.c ft_sort_mini.c check_sort.c push_a_b.c \
-				  sort.c crat_indexs.c sort_five.c crat_const.c
+				  error_1.c check_sort.c get_args.c get_next_line.c \
+				  get_next_line_utils.c
 
 BONUS_OBJS		= $(BONUS:.c=.o)
 

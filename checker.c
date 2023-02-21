@@ -7,16 +7,20 @@ int	check_corect(t_stack *a, t_stack *b)
 	arg = get_args();
 	if (!arg)
 		return (write (1, "Error\n", 6) && 1);
-	if (do_args(a, b, arg))
-	{
-		free_arg(arg);
-		return (write (1, "OK\n", 6) && 0);
-	}
-	else
-	{
-		free_arg(arg);
-		return (write (1, "KO\n", 6) && 0);
-	}
+	int i = 0;
+	while (arg[i])
+		printf("argument = %s", arg[i++]);
+	// if (do_args(a, b, arg))
+	// {
+	// 	free_arg(arg);
+	// 	return (write (1, "OK\n", 6) && 0);
+	// }
+	// else
+	// {
+	// 	free_arg(arg);
+	// 	return (write (1, "KO\n", 6) && 0);
+	// }
+	return (0);
 }
 
 int	main(int argc, char **argv)
