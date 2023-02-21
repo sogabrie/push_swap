@@ -6,8 +6,8 @@ SRCS			= push_swap.c initialization_stack.c swap_sab.c \
 
 OBJS			= $(SRCS:.c=.o)
 
-BONUS			= checker.c initialization_stack.c swap_sab.c \
-				  push_pop.c swap_pab.c swap_rab.c swap_rrab.c \
+BONUS			= checker.c initialization_stack.c swap_sab_bonus.c \
+				  push_pop.c swap_pab_bonus.c swap_rab_bonus.c swap_rrab_bonus.c \
 				  check.c check_util.c ft_split.c cpy_cat_util.c \
 				  error_1.c check_sort.c get_args.c get_next_line.c \
 				  get_next_line_utils.c checker_util.c do_args.c
@@ -47,7 +47,7 @@ test:			$(NAME)
 				@./push_swap $(ARG) | wc -l
 #				./push_swap $(ARG)
 
-test_my:			$(NAME)	
+test_my:		$(NAME)	$(BONUS_NAME)
 				$(eval ARG = $(shell jot -r 500 0 2000000))
 				./push_swap $(ARG) | ./checker$(ARG)
 				@echo -n "Instructions: "
@@ -56,17 +56,17 @@ test_my:			$(NAME)
 
 test_linux:		$(NAME)	
 				$(eval ARG = $(shell shuf -i 0-2000000 -n 100))
-#				./push_swap $(ARG) | ./checker_linux $(ARG)
-#				@echo -n "Instructions: "
-#				@./push_swap $(ARG) | wc -l
-				valgrind -s ./push_swap $(ARG)
-
-test_linux_my:		$(NAME)	
-				$(eval ARG = $(shell shuf -i 0-2000000 -n 100))
-				./push_swap $(ARG) | ./checker $(ARG)
+				./push_swap $(ARG) | ./checker_linux $(ARG)
 				@echo -n "Instructions: "
 				@./push_swap $(ARG) | wc -l
 #				valgrind -s ./push_swap $(ARG)
+
+test_linux_my:	$(NAME)	$(BONUS_NAME) Makefile
+				$(eval ARG = $(shell shuf -i 0-2000000 -n 500))
+#				./push_swap $(ARG) | ./checker $(ARG)
+#				@echo -n "Instructions: "
+#				@./push_swap $(ARG) | wc -l
+				./push_swap $(ARG) | valgrind ./checker $(ARG)
 
 
 .PHONY:			all clean fclean re bonus test bonus

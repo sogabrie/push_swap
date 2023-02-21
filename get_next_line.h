@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 100
+#  define BUFFER_SIZE 1
 # endif
 
 # include <unistd.h>
@@ -23,7 +23,7 @@
 # include <fcntl.h>
 # include <limits.h>
 
-char	*get_next_line(int fd);
+char	*get_next_line(int fd, int i);
 int		s_len(char *ptr);
 char	*char_n(char *ptr);
 char	*get_and_clean(char *ptr);

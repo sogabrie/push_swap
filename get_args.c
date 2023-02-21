@@ -50,12 +50,13 @@ char	**get_args()
 		if (!arg_2)
 			return (0);
 		arg = mas_cat_arg(arg_2, arg, i);
-		arg[i] = get_next_line(0);
+		arg[i] = get_next_line(0, 0);
 		flag = check_corect_and_end(arg[i]);
 		if (flag == 2)
 			free_arg_one(&arg[i]);
 		arg[++i] = 0;
 	}
+	get_next_line(0, 1);
 	if (flag == 1)
 		return (free_arg_char(arg));
 	return (arg);

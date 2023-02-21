@@ -62,11 +62,17 @@ char	*get_first_line(char *ptr, int fd)
 	return (ptr);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, int i)
 {
 	static char	*ptr;
 	char		*line;
 
+	if (i == 1)
+	{
+		if (ptr)
+			free(ptr);
+		return (0);
+	}
 	if (fd < 0 || BUFFER_SIZE <= 0 || -1 == read(fd, 0, 0))
 	{
 		return (0);
