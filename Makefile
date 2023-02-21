@@ -10,7 +10,7 @@ BONUS			= checker.c initialization_stack.c swap_sab.c \
 				  push_pop.c swap_pab.c swap_rab.c swap_rrab.c \
 				  check.c check_util.c ft_split.c cpy_cat_util.c \
 				  error_1.c check_sort.c get_args.c get_next_line.c \
-				  get_next_line_utils.c
+				  get_next_line_utils.c checker_util.c
 
 BONUS_OBJS		= $(BONUS:.c=.o)
 

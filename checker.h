@@ -57,7 +57,9 @@ size_t	cou_mas(char **mas);
 int		*ft_intlcpy(int *dest, int *src, size_t size);
 void	ft_zero(char **ptr, size_t i);
 
+int		free_arg_one(char **arg);
 int		free_arg(char **arg);
+char	**free_arg_char(char **arg);
 int		free_error(char **arg, int *mas);
 
 int		check_full_sort(t_stack *a);

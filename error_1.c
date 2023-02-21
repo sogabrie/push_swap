@@ -12,6 +12,32 @@
 
 #include "push_swap.h"
 
+int	free_arg_one(char **arg)
+{
+	if (!(*arg))
+		return (0);
+	free(*arg);
+	*arg = 0;
+	return (0);
+}
+
+char	**free_arg_char(char **arg)
+{
+	size_t	i;
+
+	i = 0;
+	if (!arg)
+		return (0);
+	while (arg[i])
+	{
+		if (arg[i])
+			free(arg[i]);
+		++i;
+	}
+	free(arg);
+	return (0);
+}
+
 int	free_arg(char **arg)
 {
 	size_t	i;
