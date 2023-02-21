@@ -47,12 +47,26 @@ test:			$(NAME)
 				@./push_swap $(ARG) | wc -l
 #				./push_swap $(ARG)
 
-test_linux:		$(NAME)	
-				$(eval ARG = $(shell shuf -i 0-2000000 -n 500))
-				./push_swap $(ARG) | ./checker_linux $(ARG)
+test_my:			$(NAME)	
+				$(eval ARG = $(shell jot -r 500 0 2000000))
+				./push_swap $(ARG) | ./checker$(ARG)
 				@echo -n "Instructions: "
 				@./push_swap $(ARG) | wc -l
-				./push_swap $(ARG)
+#				./push_swap $(ARG)
+
+test_linux:		$(NAME)	
+				$(eval ARG = $(shell shuf -i 0-2000000 -n 100))
+#				./push_swap $(ARG) | ./checker_linux $(ARG)
+#				@echo -n "Instructions: "
+#				@./push_swap $(ARG) | wc -l
+				valgrind -s ./push_swap $(ARG)
+
+test_linux_my:		$(NAME)	
+				$(eval ARG = $(shell shuf -i 0-2000000 -n 100))
+				./push_swap $(ARG) | ./checker $(ARG)
+				@echo -n "Instructions: "
+				@./push_swap $(ARG) | wc -l
+#				valgrind -s ./push_swap $(ARG)
 
 
 .PHONY:			all clean fclean re bonus test bonus
