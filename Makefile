@@ -62,11 +62,11 @@ test_linux:		$(NAME)
 #				valgrind -s ./push_swap $(ARG)
 
 test_linux_my:	$(NAME)	$(BONUS_NAME) Makefile
-				$(eval ARG = $(shell shuf -i 0-2000000 -n 500))
-#				./push_swap $(ARG) | ./checker $(ARG)
-#				@echo -n "Instructions: "
-#				@./push_swap $(ARG) | wc -l
-				./push_swap $(ARG) | valgrind ./checker $(ARG)
+				$(eval ARG = $(shell shuf -i 0-2000000 -n 100))
+				./push_swap $(ARG) | ./checker $(ARG)
+				@echo -n "Instructions: "
+				@./push_swap $(ARG) | wc -l
+#				./push_swap $(ARG) | valgrind -s ./checker $(ARG)
 
 
 .PHONY:			all clean fclean re bonus test bonus
