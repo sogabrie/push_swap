@@ -48,8 +48,8 @@ test:			$(NAME)
 #				./push_swap $(ARG)
 
 test_my:		$(NAME)	$(BONUS_NAME)
-				$(eval ARG = $(shell jot -r 500 0 2000000))
-				./push_swap $(ARG) | ./checker$(ARG)
+				$(eval ARG = $(shell jot -r 100 0 2000000))
+				./push_swap $(ARG) | ./checker $(ARG)
 				@echo -n "Instructions: "
 				@./push_swap $(ARG) | wc -l
 #				./push_swap $(ARG)
@@ -58,7 +58,7 @@ test_linux:		$(NAME)
 				$(eval ARG = $(shell shuf -i 0-2000000 -n 100))
 				./push_swap $(ARG) | ./checker_linux $(ARG)
 				@echo -n "Instructions: "
-				@./push_swap $(ARG) | wc -l
+				@./push_swap $(ARG) | wc -ls
 #				valgrind -s ./push_swap $(ARG)
 
 test_linux_my:	$(NAME)	$(BONUS_NAME) Makefile
@@ -67,6 +67,5 @@ test_linux_my:	$(NAME)	$(BONUS_NAME) Makefile
 				@echo -n "Instructions: "
 				@./push_swap $(ARG) | wc -l
 #				./push_swap $(ARG) | valgrind -s ./checker $(ARG)
-
 
 .PHONY:			all clean fclean re bonus test bonus

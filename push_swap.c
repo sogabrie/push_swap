@@ -12,23 +12,6 @@
 
 #include "push_swap.h"
 
-// void	print_stack(t_stack *st)
-// {
-//     t_list  *ls;
-
-//     if (!st || st->count < 1)
-//     {
-//         printf("ERROR Steck frry\n");
-//         return ;
-//     }
-//     ls = st->first;
-//     while(ls)
-//     {
-//         printf("cont = %d indexs = %lu \n", ls->data, ls->indexs);
-//         ls = ls->next;
-//     }
-// }
-
 int	main(int argc, char **argv)
 {
 	int		*mas;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_args.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/22 14:29:54 by sogabrie          #+#    #+#             */
+/*   Updated: 2023/02/22 14:29:55 by sogabrie         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker.h"
 
 char	**mas_cat_arg(char **arg_2, char **arg, size_t i)
@@ -34,12 +46,12 @@ size_t	check_corect_and_end(char *a)
 	return (1);
 }
 
-char	**get_args()
+char	**get_args(void)
 {
 	char	**arg;
 	char	**arg_2;
-	size_t		i;
-	size_t		flag;
+	size_t	i;
+	size_t	flag;
 
 	i = 0;
 	flag = 0;

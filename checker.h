@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sogabrie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/22 14:28:42 by sogabrie          #+#    #+#             */
+/*   Updated: 2023/02/22 14:28:49 by sogabrie         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CHECKER_H
 # define CHECKER_H
 
@@ -67,7 +79,7 @@ int		check_full_sort(t_stack *a);
 int		ft_strcmp_n(char *s1, char *s2);
 int		ft_strcmp(char *s1, char *s2);
 
-char	**get_args();
+char	**get_args(void);
 int		do_args(t_stack *a, t_stack *b, char **args);
 
 #endif
