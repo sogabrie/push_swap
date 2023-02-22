@@ -36,15 +36,17 @@ int	check_duplikat(int *mas, int count)
 
 int	check_mas(int *mas, char **arg, size_t count, size_t indexs)
 {
-	size_t	i;
-	size_t	j;
-	long	lo;
+	size_t		i;
+	size_t		j;
+	long long	lo;
 
 	j = 0;
 	i = indexs;
 	while (i < count + indexs)
 	{
 		if (chack_number(arg[j]))
+			return (1);
+		if (ft_strlen(arg[j]) > 15)
 			return (1);
 		lo = ft_atoi(arg[j++]);
 		if (lo > 2147483647 || lo < -2147483648)

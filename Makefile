@@ -55,7 +55,7 @@ test_my:		$(NAME)	$(BONUS_NAME)
 #				./push_swap $(ARG)
 
 test_linux:		$(NAME)	
-				$(eval ARG = $(shell shuf -i 0-2000000 -n 100))
+				$(eval ARG = $(shell shuf -i 0 -2000000 -n 100))
 				./push_swap $(ARG) | ./checker_linux $(ARG)
 				@echo -n "Instructions: "
 				@./push_swap $(ARG) | wc -ls
