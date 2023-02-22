@@ -70,6 +70,7 @@ void	ft_zero(char **ptr, size_t i);
 
 int		free_arg(char **arg);
 int		free_error(char **arg, int *mas);
+int		free_error_main(t_stack *a, t_stack *b, int *mas, int flag);
 
 int		sort_try(t_stack *a);
 int		full_sort_try(t_stack *a);

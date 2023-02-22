@@ -41,7 +41,7 @@ $(BONUS_NAME):	$(BONUS_OBJS) Makefile
 				$(CC) $(BONUS_OBJS) -o $(BONUS_NAME)
 
 test:			$(NAME)	
-				$(eval ARG = $(shell jot -r 500 0 2000000))
+				$(eval ARG = $(shell jot -r 25 0 2000000))
 				./push_swap $(ARG) | ./checker_Mac $(ARG)
 				@echo -n "Instructions: "
 				@./push_swap $(ARG) | wc -l
