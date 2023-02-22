@@ -61,3 +61,14 @@ int	free_error(char **arg, int *mas)
 		free(mas);
 	return (free_arg(arg) + 1);
 }
+
+int	free_error_main(t_stack *a, t_stack *b, int *mas, int flag)
+{
+	free_stack(a);
+	free_stack(b);
+	if (mas)
+		free(mas);
+	if (flag)
+		write (2, "Error\n", 6);
+	return (0);
+}
