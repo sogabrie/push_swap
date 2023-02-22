@@ -45,10 +45,12 @@ int	main(int argc, char **argv)
 	b = constructor_stack();
 	mas = malloc(argc * sizeof(int));
 	if (!mas || !a || !b)
-		return (free_error_main(a, b, 0, 1));
+		return (free_error_main(a, b, mas, 1));
 	ac = (size_t)(argc - 1);
-	if (check_argv(&mas, ++argv, &ac) || check_duplikat(mas, ac))
+	if (check_argv(&mas, ++argv, &ac))
 		return (free_error_main(a, b, 0, 1));
+	if (check_duplikat(mas, ac))
+		return (free_error_main(a, b, mas, 1));
 	initialization_stack(a, mas, ac);
 	free(mas);
 	check_corect(a, b);

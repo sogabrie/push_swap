@@ -55,14 +55,14 @@ test_my:		$(NAME)	$(BONUS_NAME)
 #				./push_swap $(ARG)
 
 test_linux:		$(NAME)	
-				$(eval ARG = $(shell shuf -i 0 -2000000 -n 100))
+				$(eval ARG = $(shell shuf -i 0-5000 -n 500))
 				./push_swap $(ARG) | ./checker_linux $(ARG)
 				@echo -n "Instructions: "
-				@./push_swap $(ARG) | wc -ls
-#				valgrind -s ./push_swap $(ARG)
+				@./push_swap $(ARG) | wc -l
+#				valgrind ./push_swap $(ARG)
 
 test_linux_my:	$(NAME)	$(BONUS_NAME) Makefile
-				$(eval ARG = $(shell shuf -i 0-2000000 -n 100))
+				$(eval ARG = $(shell shuf -i 0-5000 -n 500))
 				./push_swap $(ARG) | ./checker $(ARG)
 				@echo -n "Instructions: "
 				@./push_swap $(ARG) | wc -l
